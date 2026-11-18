@@ -6,4 +6,3 @@ plotly
 openpyxl
 python-dotenv
 psycopg[binary]
-tabulate

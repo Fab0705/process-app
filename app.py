@@ -5,7 +5,6 @@ from sqlalchemy import create_engine, text
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import google.generativeai as genai
 
 # Configuración de página
 st.set_page_config(page_title="Análisis de Rendimiento de Procesos", layout="wide")
@@ -21,11 +20,6 @@ def get_engine():
     return create_engine(db_url)
 
 engine = get_engine()
-
-# Configurar Gemini
-gemini_api_key = os.getenv("GEMINI_API_KEY")
-if gemini_api_key:
-    genai.configure(api_key=gemini_api_key)
 
 # Funciones cacheadas
 @st.cache_data(ttl=600)
